@@ -4,25 +4,30 @@
 #include <string.h>
 
 int main(int argc, char * argv[]) {
-    
+
+
     char input[100];
     FILE* fp;
-    int i;
+    char c;
     
-     //fopen
-    fp = fopen("sample.txt", "w");
     
-    for (i=0;i<3;i++)
+    //fopen
+    fp = fopen("/Users/jw/Documents/programming/10sample.txt", "r");
+    
+    while ( (c = fgetc(fp)) != EOF)
     {
-        //fprintf
-        printf("input a word : ");
-        scanf("%s", input);    //배열은 &안넣어도됨 input 자체가 포인터임
-        fprintf(fp, "%s\n", input);
-        
+        putchar(c);
     }
     
-        //fclose
-        fclose(fp);
+#if 0
+    while ( fgets(input, 100, fp) != 0)  // or  > 0
+    {
+        printf("%s", input);
+    }
+#endif
+    
+    //fclose
+    fclose(fp);
 
     system("PAUSE");
     return 0;
