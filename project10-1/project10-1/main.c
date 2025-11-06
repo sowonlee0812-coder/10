@@ -1,20 +1,15 @@
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char * argv[]) {
+    char src[] = "The worst things to eat before you sleep";
+    char dst[100];
     
-    int i = 0;
-    char str[4];
-    str[0] = 'a';
-    str[1] = 'b';
-    str[2] = 'c';
-    str[3] = '\0';
-  
-    while (str[i] != '\0') {
-        printf("%c", str[i]);
-        i++;
-    }
+    strcpy(dst,src);
+    
+    printf("copied string : %s\n", dst);
     
     system("PAUSE");
     return 0;
